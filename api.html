@@ -1,0 +1,76 @@
+
+<script>
+ if(1==='1')
+ {
+ alert('its equal');
+ }
+ else{alert('its not equal');}
+
+
+let abc = 453;
+ function testt(){
+ 
+  console.log(abc);
+ }
+ testt();
+</script>
+
+
+
+
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head> 
+<script>
+       
+    //a3659536338da62cae9a654cb37bdbc2
+   // sFE03GaZW4Up9GXdOb1oOqmk1BRl22la
+   //var myHeaders = new Headers();
+ /**myHeaders.append("apikey", "a3659536338da62cae9a654cb37bdbc2");
+
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow',
+  headers: myHeaders
+};
+
+fetch("https://api.apilayer.com/fixer/convert?to=PKR&from=USD&amount=100", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error)); **/
+
+
+  function convertToUSD()
+  {
+      
+      //alert('orPrice'+orPrice);
+      endpoint = 'convert';
+      access_key = 'a3659536338da62cae9a654cb37bdbc2';
+      from = 'USD';
+      to = 'NGN';
+      amount = 1;
+      
+      $.ajax({
+      url: 'https://api.apilayer.com/fixer/convert?to=PKR&from=USD&amount=1&apikey=sFE03GaZW4Up9GXdOb1oOqmk1BRl22la',   
+      dataType: 'json',
+      success: function(json) {
+        
+          convertedUnit  =  json.result;
+          console.log(convertedUnit);
+         
+          var convertedResult =  Math.ceil(parseInt(10) * convertedUnit);
+
+          console.log(convertedResult);
+         
+          //alert(convertedResult);
+          
+      }
+      });
+}
+
+
+convertToUSD();
+
+
+</script>
